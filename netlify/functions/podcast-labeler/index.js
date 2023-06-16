@@ -3,6 +3,7 @@ const GhostAdminAPI = require('@tryghost/admin-api');
 const cheerio = require('cheerio');
 
 const handler = async (event) => {
+  console.log(process.env.GHOST_API_URL);
   const api = new GhostAdminAPI({
     url: process.env.GHOST_API_URL,
     version: "v5.0",
