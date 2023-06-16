@@ -14,5 +14,8 @@ a podcast RSS feed out of Ghost.  Use it to use Ghost as a single platform (er..
   * Parses the post content, finds the first <audio> link (won't work with iframes) and builds the enclosure line of the RSS.  
   * Uses the Ghost Admin API to update the post.
   
+  # Deploy to Netlify!
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cathysarisky/podcast-labeler)
+  
 # ToDo:
   * Improve security.  Respond to receiving a webhook call by pulling the post body from the Ghost API, instead of trusting the webhook to be correct.  (Reduces the webhook to a trigger, not a source of information to be acted on at the Admin level.)
