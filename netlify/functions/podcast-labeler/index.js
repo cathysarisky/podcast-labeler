@@ -25,7 +25,7 @@ const handler = async (event) => {
     // TODO: add processing of extension instead.
 
     console.log('source is',  audioSource);
-    if (checkCodeInjectionBlank(codeinjection_foot) && checkTags(tags)) {
+    if (audioSource && checkCodeInjectionBlank(codeinjection_foot) && checkTags(tags)) {
       console.log('need to process this one');
       let newobject = {id: id, updated_at: updated_at, codeinjection_foot: `<enclosure url="${audioSource}" type="${audioType}" ${lengthString} />`}
       console.log('new object is:', newobject)
