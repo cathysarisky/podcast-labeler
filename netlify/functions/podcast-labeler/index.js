@@ -32,14 +32,17 @@ const handler = async (event) => {
     }
 
     let lengthString =""
-    if (audioLength) {lengthString = `length="${audioSize}"`}
+    if (audioSize) {lengthString = `length="${audioSize}"`}
     let audioType = `audio/mpeg`;
     // TODO: add processing of extension instead.
 
     console.log('source is',  audioSource);
+
     if (audioSource && checkCodeInjectionBlank(codeinjection_foot) && checkTags(tags)) {
       console.log('need to process this one');
-      let newobject = {id: id, updated_at: updated_at, codeinjection_foot: `<enclosure url="${audioSource}" type="${audioType}" ${lengthString} />`}
+      let newobject = {id: id, updated_at: updated_at, 
+        codeinjection_foot: `<enclosure url="${audioSource}" type="${audioType}" ${lengthString} />
+        <itunes:duration>${audioLength}</itunes:duration>`}
       console.log('new object is:', newobject)
       let ghostResponse = await api.posts.edit(newobject)
       //console.log('done, result was', ghostResponse)
