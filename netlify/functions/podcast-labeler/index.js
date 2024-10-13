@@ -21,7 +21,7 @@ const handler = async (event) => {
     let audioSource = $('audio').attr('src')
     let audioLength = $('.kg-audio-duration').prop('innerText')
     console.log('audio length is:', audioLength);
-    audioLength = parseInt(audioLength/60);
+    audioLength = parseInt(audioLength);
     console.log('now it is ', audioLength);
 
     // get the size of the audio file
