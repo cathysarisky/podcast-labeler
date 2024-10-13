@@ -19,8 +19,19 @@ const handler = async (event) => {
     const $ = cheerio.load(html);
     let audioSource = $('audio').attr('src')
     let audioLength = $('.kg-audio-duration').prop('innerText')
+    // get the size of the audio file
+    let audioSize = 0;
+    if (audioSource) {
+      try {
+        const response = await axios.head(audioSource);
+        audioSize = response.headers['content-length'];
+      } catch (error) {
+        console.error('Error fetching audio file size:', error);
+      }
+    }
+
     let lengthString =""
-    if (audioLength) {lengthString = `length="${audioLength}"`}
+    if (audioLength) {lengthString = `length="${audioSize}"`}
     let audioType = `audio/mpeg`;
     // TODO: add processing of extension instead.
 
