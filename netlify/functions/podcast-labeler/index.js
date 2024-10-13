@@ -20,6 +20,9 @@ const handler = async (event) => {
     const $ = cheerio.load(html);
     let audioSource = $('audio').attr('src')
     let audioLength = $('.kg-audio-duration').prop('innerText')
+    console.log('audio length is:', audioLength);
+
+
     // get the size of the audio file
     let audioSize = 0;
     if (audioSource) {
