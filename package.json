@@ -13,6 +13,7 @@
     "netlify-cli": "^15.6.0"
   },
   "dependencies": {
-    "@tryghost/admin-api": "^1.13.7"
+    "@tryghost/admin-api": "^1.13.7",
+    "axios": "^1.7.7"
   }
 }

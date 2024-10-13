@@ -1,6 +1,7 @@
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const GhostAdminAPI = require('@tryghost/admin-api');
 const cheerio = require('cheerio');
+const axios = require('axios');
 
 const handler = async (event) => {
   console.log(process.env.GHOST_API_URL);
