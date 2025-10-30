@@ -4,7 +4,7 @@ This is a Netlify function package that will catch a Ghost webhook and modify th
 a podcast RSS feed out of Ghost.  Use it to use Ghost as a single platform (er... ok, Netlify too) for publishing your podcast.
   
 # To use:
-  * Modify your theme to include an RSS feed.  I largely followed this tutorial (https://ghost.org/tutorials/custom-rss-feed/), but I store the whole value of the <enclosure> line in codeinjection_foot, not in the Facebook description string.
+  * Modify your theme to include an RSS feed.  I largely followed this tutorial (https://ghost.org/tutorials/custom-rss-feed/), but I store the whole value of the &lt;enclosure&gt; line in codeinjection_foot, not in the Facebook description string.
   * Install this package on Netlify.  Provide it with the three required environment variables.
   * Add web hooks for post created and post updated, directing them to the Netlify function.
   
