@@ -56,6 +56,9 @@ const handler = async (event) => {
         }
     }  else {
       console.log('post needs no processing');
+      console.log('tags are:', tags);
+      console.log('code injection foot is:', codeinjection_foot);
+      console.log('audio source is:', audioSource);
       return {
         statusCode: 200,
         body: JSON.stringify({ message: `No processing needed` }),
